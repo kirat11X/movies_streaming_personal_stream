@@ -1,0 +1,127 @@
+.site-footer {
+    margin-top: auto;
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, transparent, rgba(139, 70, 255, 0.05));
+}
+
+/* ─── Admin access callout ─── */
+.site-footer__admin {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 1.15rem 1.4rem;
+    margin-bottom: 2.75rem;
+    border-radius: var(--r-lg);
+    background: var(--gradient-brand-soft);
+    border: 1px solid rgba(139, 70, 255, 0.24);
+}
+
+.site-footer__admin-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--line-strong);
+    color: var(--text-brand);
+}
+
+.site-footer__admin-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.site-footer__admin-copy strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+}
+
+.site-footer__admin-copy p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text-3);
+}
+
+.site-footer__admin-copy a {
+    color: var(--text-brand);
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.site-footer__admin-copy a:hover {
+    text-decoration: underline;
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.site-footer__brand {
+    max-width: 320px;
+}
+
+.site-footer__brand p {
+    margin-top: 0.9rem;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--text-3);
+}
+
+.site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(2rem, 6vw, 4.5rem);
+}
+
+.site-footer__links div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.site-footer__links h3 {
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+.site-footer__links a {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    transition: color var(--t-fast), transform var(--t-fast);
+}
+
+.site-footer__links a:hover {
+    color: var(--text-brand);
+    transform: translateX(2px);
+}
+
+@media (max-width: 720px) {
+    .site-footer__admin {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.site-footer__base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    color: var(--text-3);
+}

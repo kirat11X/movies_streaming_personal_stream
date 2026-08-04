@@ -1,0 +1,6 @@
+$kind: collection
+name: Movie Streaming Health Checks
+description: Health check and monitoring requests for the Movie Streaming API
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8080'

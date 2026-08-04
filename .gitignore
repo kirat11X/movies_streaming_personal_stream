@@ -1,0 +1,70 @@
+# --------------------------------------------------
+# Secrets and local environment files
+# --------------------------------------------------
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+
+# --------------------------------------------------
+# Node / frontend dependencies and build output
+# --------------------------------------------------
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/build/
+**/.vite/
+**/.cache/
+**/coverage/
+**/*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --------------------------------------------------
+# Go build output and test artifacts
+# --------------------------------------------------
+**/bin/
+**/*.exe
+**/*.test
+**/*.out
+**/coverage.out
+
+# --------------------------------------------------
+# Logs, temporary files, and local databases
+# --------------------------------------------------
+*.log
+**/tmp/
+**/temp/
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# --------------------------------------------------
+# IDE, editor, and operating-system files
+# --------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# --------------------------------------------------
+# Local tooling and workspace state
+# --------------------------------------------------
+.agents/
+.codex/
+.claude/
+.postman/
+playground-1.mongodb.js
+movie-streaming

@@ -1,0 +1,92 @@
+.browse__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+}
+
+/* ─── Search field ─── */
+.browse__search {
+    position: relative;
+    flex: 1 1 320px;
+    display: flex;
+    align-items: center;
+    color: var(--text-3);
+}
+
+.browse__search svg {
+    position: absolute;
+    left: 0.95rem;
+    pointer-events: none;
+}
+
+.browse__search .input {
+    padding-left: 2.7rem;
+    border-radius: var(--r-pill);
+}
+
+.browse__search .input:focus + svg,
+.browse__search:focus-within {
+    color: var(--text-brand);
+}
+
+/* ─── Sort toggle ─── */
+.browse__sort {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: var(--r-pill);
+    background: var(--surface-1);
+    border: 1px solid var(--line);
+}
+
+.browse__sort-btn {
+    padding: 0.45rem 1rem;
+    border-radius: var(--r-pill);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-3);
+    transition: color var(--t-fast), background var(--t-fast);
+}
+
+.browse__sort-btn:hover {
+    color: var(--text);
+}
+
+.browse__sort-btn.is-active {
+    background: var(--gradient-brand);
+    color: #fff;
+    box-shadow: 0 5px 16px -6px rgba(139, 70, 255, 0.9);
+}
+
+/* ─── Genre pills ─── */
+.browse__genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.browse__genre {
+    padding: 0.4rem 0.95rem;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--line);
+    background: var(--surface-1);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-2);
+    transition: color var(--t-fast), background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.browse__genre:hover {
+    color: var(--text);
+    background: var(--surface-2);
+    border-color: var(--line-strong);
+    transform: translateY(-1px);
+}
+
+.browse__genre.is-active {
+    background: rgba(139, 70, 255, 0.18);
+    border-color: rgba(139, 70, 255, 0.5);
+    color: var(--text-brand);
+    font-weight: 600;
+}

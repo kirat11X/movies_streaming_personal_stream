@@ -1,0 +1,92 @@
+.ps-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 1rem;
+}
+
+.ps-loader--full {
+    min-height: 70vh;
+}
+
+.ps-loader__ring {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--brand) 45%, var(--azure) 75%, transparent 100%);
+    animation: spin 0.9s linear infinite;
+}
+
+/* Punch the middle out so the conic gradient reads as a ring. */
+.ps-loader__ring::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: var(--bg);
+}
+
+.ps-loader__label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+}
+
+/* ─── Skeletons ─── */
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem) clamp(0.85rem, 1.5vw, 1.4rem);
+}
+
+.skeleton-row {
+    display: flex;
+    gap: clamp(0.85rem, 1.5vw, 1.4rem);
+    overflow: hidden;
+}
+
+.skeleton-row .skeleton-card {
+    flex: 0 0 auto;
+    width: clamp(150px, 15vw, 208px);
+}
+
+.skeleton-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.skeleton-block {
+    border-radius: var(--r-md);
+    background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0.04) 30%,
+        rgba(255, 255, 255, 0.09) 50%,
+        rgba(255, 255, 255, 0.04) 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-block--poster {
+    aspect-ratio: 2 / 3;
+}
+
+.skeleton-block--line {
+    height: 11px;
+    border-radius: var(--r-xs);
+}
+
+.skeleton-block--line.is-short {
+    width: 58%;
+}
+
+@media (max-width: 520px) {
+    .skeleton-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

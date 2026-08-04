@@ -1,0 +1,62 @@
+.recommended__genres {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.recommended__genres-label {
+    margin-right: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+/* ─── "How it works" strip ─── */
+.recommended__how {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1px;
+    list-style: none;
+    margin-bottom: 2.25rem;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.recommended__how li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-elevated);
+}
+
+.recommended__step {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    box-shadow: 0 5px 16px -6px rgba(139, 70, 255, 0.9);
+}
+
+.recommended__how strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+}
+
+.recommended__how p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-3);
+}

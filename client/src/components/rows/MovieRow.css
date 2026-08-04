@@ -1,0 +1,136 @@
+.movie-row {
+    margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.movie-row__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movie-row__head .section-eyebrow {
+    margin-bottom: 0;
+}
+
+.movie-row__subtitle {
+    margin-top: 0.3rem;
+    font-size: 0.86rem;
+    color: var(--text-3);
+}
+
+.movie-row__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-2);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--r-pill);
+    transition: color var(--t-fast), background var(--t-fast), gap var(--t-fast);
+}
+
+.movie-row__all:hover {
+    color: var(--text);
+    background: var(--surface-2);
+    gap: 0.5rem;
+}
+
+/* ─── Track ─── */
+.movie-row__viewport {
+    position: relative;
+}
+
+.movie-row__track {
+    display: flex;
+    gap: clamp(0.85rem, 1.5vw, 1.4rem);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    /* Snap points ignore padding unless scroll-padding matches it — without
+       this the track snaps past its own gutter and clips the first poster. */
+    scroll-padding-inline: var(--gutter);
+    padding: 0.5rem var(--gutter) 1.25rem;
+    scrollbar-width: none;
+}
+
+.movie-row__track::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-row__item {
+    flex: 0 0 auto;
+    width: clamp(150px, 15vw, 208px);
+    scroll-snap-align: start;
+}
+
+/* Edge fades hint at more content */
+.movie-row__viewport::before,
+.movie-row__viewport::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(2rem, 5vw, 5rem);
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity var(--t-med);
+}
+
+.movie-row__viewport::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg) 8%, transparent);
+}
+
+.movie-row__viewport::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg) 8%, transparent);
+}
+
+.movie-row__viewport.at-start::before { opacity: 0; }
+.movie-row__viewport.at-end::after { opacity: 0; }
+
+/* ─── Arrows ─── */
+.movie-row__arrow {
+    position: absolute;
+    top: calc(50% - 2rem);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(10, 11, 18, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity var(--t-med), background var(--t-fast), transform var(--t-fast);
+}
+
+.movie-row__viewport:hover .movie-row__arrow {
+    opacity: 1;
+}
+
+.movie-row__arrow:hover {
+    background: var(--brand);
+    border-color: transparent;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.movie-row__arrow--prev { left: calc(var(--gutter) / 3); }
+.movie-row__arrow--next { right: calc(var(--gutter) / 3); }
+
+.movie-row__viewport.at-start .movie-row__arrow--prev,
+.movie-row__viewport.at-end .movie-row__arrow--next {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+@media (hover: none) {
+    .movie-row__arrow { display: none; }
+}

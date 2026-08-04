@@ -1,0 +1,61 @@
+.home__rows {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(-3rem, -4vw, -1.5rem);
+}
+
+.home__loading-hero {
+    height: clamp(280px, 42vh, 420px);
+    border-radius: var(--r-lg);
+    margin-bottom: 2.5rem;
+}
+
+/* ─── Sign-up prompt for anonymous visitors ─── */
+.home__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    border-radius: var(--r-xl);
+    background:
+        linear-gradient(120deg, rgba(139, 70, 255, 0.2), rgba(71, 191, 255, 0.12)),
+        var(--bg-elevated);
+    border: 1px solid rgba(139, 70, 255, 0.28);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+}
+
+.home__cta::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 70, 255, 0.35), transparent 65%);
+    pointer-events: none;
+}
+
+.home__cta h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 0.5rem;
+}
+
+.home__cta p {
+    max-width: 54ch;
+    font-size: 0.94rem;
+    color: var(--text-2);
+}
+
+.home__cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    position: relative;
+    z-index: 1;
+}
