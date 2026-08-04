@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -41,7 +41,14 @@ func main() {
 	routes.SetupUnProtectedRoutes(router, client)
 	routes.SetupProtectedRoutes(router, client)
 
-	if err := router.Run(":8080"); err != nil {
-		fmt.Println("Failed to start server", err)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	// Render requires a service to listen on its injected PORT and on a
+	// publicly reachable interface, not only on localhost.
+	if err := router.Run("0.0.0.0:" + port); err != nil {
+		log.Fatalf("Failed to start server: %v", err)
 	}
 }
